@@ -1,4 +1,20 @@
 # urdu-ocr-codesaviours-si26-noorulaein-fatima-
+# Urdu OCR Project
+
+## Project Description
+This project is focused on collecting and organizing Urdu text images for OCR model development.
+
+## Dataset Structure
+- Newspaper images
+- Books images
+- Signboard images
+- Synthetic images
+- Other images
+
+## Week 1 Tasks Completed
+- Created dataset folders
+- Collected and organized images
+- Created labels.csv
 Research Task: Understanding Urdu OCR
 
  1. What is OCR (Optical Character Recognition)?
