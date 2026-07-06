@@ -36,3 +36,13 @@ Researchers and students can access them quickly.
  b. Digitizing Educational Materials and Books:
 Translating printed Urdu textbooks, poetry collections, and academic papers into digital formats allows for better distribution and accessibility.
 OCR technology makes it possible to extract and format large quantities of Urdu literature for e-readers and online libraries
+
+Why We Need a Better Model?
+Tesseract fails on Urdu because Urdu is a right-to-left language where letters 
+are connected and can change shape depending on their position in a word. From the results above,
+Tesseract missed some words, recognized some characters incorrectly, and
+in some cases produced incomplete text or random symbols
+Some outputs were partially correct, but many words were not recognized properly.
+This shows that Urdu text is more difficult for Tesseract to process because of different fonts,
+image quality issues, and the complex writing style of the language.
+
