@@ -1,49 +1,190 @@
-# urdu-ocr-codesaviours-si26-noorulaein-fatima-
-# Urdu OCR Project
+# Urdu OCR using TrOCR
+### A Fine-Tuned TrOCR Model for Extracting Printed Urdu Text from Images
 
-## Project Description
-This project is focused on collecting and organizing Urdu text images for OCR model development.
+## Project Overview
 
-## Dataset Structure
-- Newspaper images
-- Books images
-- Signboard images
-- Synthetic images
-- Other images
+This project is an Optical Character Recognition (OCR) system developed for extracting printed Urdu text from images using Microsoft's TrOCR (Transformer-based OCR) model. The model was fine-tuned on a custom Urdu image dataset during the Code Saviours ML/AI Internship (Batch SI-26).
 
-## Week 1 Tasks Completed
-- Created dataset folders
-- Collected and organized images
-- Created labels.csv
-Research Task: Understanding Urdu OCR
+The project is deployed as a live web application using **Gradio** and **Hugging Face Spaces**, allowing users to upload Urdu text images and receive extracted text through a simple interface.
 
- 1. What is OCR (Optical Character Recognition)?
-OCR is a technology that changes text in images, scanned papers, or PDFs into editable digital text.
-It reads letters and words from an image and converts them into computer text.
-OCR helps save time and is used for digitizing books, documents, and forms.
+---
 
-2. Why is Urdu OCR harder than English OCR?
-Urdu OCR is difficult because Urdu uses a cursive writing style called Nastaliq.
-Urdu letters change their shape according to their position in a word and are written from right to left.
-Many letters join together, which makes it hard for OCR to recognize them correctly.
+# Problem Statement
 
-3. Two Real-World Situations Where Urdu OCR Would Be Useful
- a. Digitizing Historical and Legal Archives:
-Urdu OCR can help convert old books, historical records, and legal documents into digital form.
-This makes them easier to search, store, and protect from damage.
-Researchers and students can access them quickly.
+Optical Character Recognition for Urdu is significantly more challenging than English because Urdu uses the Nastaliq writing style. Nastaliq contains:
 
- b. Digitizing Educational Materials and Books:
-Translating printed Urdu textbooks, poetry collections, and academic papers into digital formats allows for better distribution and accessibility.
-OCR technology makes it possible to extract and format large quantities of Urdu literature for e-readers and online libraries
+- Complex ligatures
+- Connected characters
+- Variable character shapes
+- Overlapping words
+- Right-to-left writing direction
 
-## Week 2 Tasks Completed
-Why We Need a Better Model?
-Tesseract fails on Urdu because Urdu is a right-to-left language where letters 
-are connected and can change shape depending on their position in a word. From the results above,
-Tesseract missed some words, recognized some characters incorrectly, and
-in some cases produced incomplete text or random symbols
-Some outputs were partially correct, but many words were not recognized properly.
-This shows that Urdu text is more difficult for Tesseract to process because of different fonts,
-image quality issues, and the complex writing style of the language.
+These characteristics make Urdu OCR a difficult computer vision problem.
 
+A reliable Urdu OCR system can help digitize books, newspapers, historical archives, educational material, and official documents.
+
+---
+
+# How the Project Works
+
+The project uses Microsoft's **TrOCR (Transformer-based Optical Character Recognition)** model.
+
+### Workflow
+
+1. User uploads an Urdu image.
+2. The image is preprocessed using the TrOCR Processor.
+3. The fine-tuned VisionEncoderDecoder model predicts the text.
+4. The generated tokens are decoded into readable Urdu text.
+5. The extracted text is displayed in the Gradio interface.
+
+The model was fine-tuned on a custom dataset consisting of printed Urdu text images and corresponding labels.
+
+---
+
+# Technologies Used
+
+- Python
+- PyTorch
+- Hugging Face Transformers
+- TrOCR
+- Gradio
+- Google Colab
+- Hugging Face Spaces
+- Pillow
+
+---
+
+# Live Demo
+
+**Hugging Face Space**
+
+(https://huggingface.co/spaces/noorulaeinfatima/urdu-ocr-codesaviours-si26-noorulaeinfatima)
+
+---
+
+# How to Run Locally
+
+Clone the repository
+
+```bash
+git clone(https://github.com/noorulaein/urdu-ocr-codesaviours-si26-noorulaein-fatima)
+```
+
+Move into the project directory
+
+```bash
+cd YOUR_REPOSITORY
+```
+
+Install the required libraries
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the application
+
+```bash
+python app.py
+```
+
+The Gradio application will open in your browser.
+
+---
+
+# Dataset
+
+The model was fine-tuned using a custom Urdu OCR dataset created during the internship.
+
+Dataset characteristics include:
+
+- Printed Urdu text images
+- Multiple image sizes
+- Different fonts
+- Various word lengths
+- Image preprocessing before training
+
+The dataset was collected and prepared using publicly available Urdu text sources and custom-generated samples.
+
+---
+
+# Model Results
+
+### Training Summary
+
+- Base Model: Microsoft TrOCR (Printed)
+- Framework: Hugging Face Transformers
+- Fine-tuned using PyTorch
+- Deployment: Hugging Face Spaces
+
+### Accuracy
+
+Current Model Accuracy:
+
+**Approximately 2%**
+
+### Current Limitations
+
+The current model does not accurately extract Urdu text because of several factors:
+
+- The training dataset is relatively small.
+- Urdu Nastaliq script is highly complex.
+- The model was trained for a limited number of epochs.
+- The dataset does not contain enough font and layout diversity.
+- Additional preprocessing techniques could further improve recognition quality.
+
+Because of these limitations, the application may generate incomplete text or unreadable characters for many images.
+
+---
+
+# Future Improvements
+
+The model can be significantly improved by:
+
+- Increasing the dataset size to several thousand images.
+- Collecting images from books, newspapers, and signboards.
+- Including more Urdu fonts and writing styles.
+- Applying stronger preprocessing techniques.
+- Training for more epochs.
+- Performing hyperparameter tuning.
+- Using a larger TrOCR checkpoint or experimenting with other OCR architectures.
+
+These improvements are expected to substantially increase OCR accuracy and make the application more suitable for real-world use.
+
+---
+
+# Screenshots
+
+## Gradio Interface
+
+<img width="1068" height="405" alt="image" src="https://github.com/user-attachments/assets/1aa74fe7-f234-42ef-a44c-b0cee6bbd979" />
+
+## Prediction Example
+
+<img width="1313" height="350" alt="model" src="https://github.com/user-attachments/assets/b690f8af-11fd-414e-bdb9-9c099a9f31b8" />
+
+---
+
+# Project Structure
+
+```
+project/
+│
+├── app.py
+├── requirements.txt
+├── config.json
+├── model.safetensors
+├── tokenizer files
+├── README.md
+└── images/
+```
+
+---
+
+# Author
+
+**Noorulaein Fatima**
+
+Built during the **Code Saviours ML/AI Internship — Batch SI-26**
+
+---
