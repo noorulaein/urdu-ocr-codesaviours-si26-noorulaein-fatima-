@@ -157,11 +157,13 @@ These improvements are expected to substantially increase OCR accuracy and make 
 
 ## Gradio Interface
 
-<img width="1068" height="405" alt="image" src="https://github.com/user-attachments/assets/1aa74fe7-f234-42ef-a44c-b0cee6bbd979" />
+<img width="793" height="317" alt="image" src="https://github.com/user-attachments/assets/c2f33267-8c76-4408-9678-38dfceaaabf4" />
+
 
 ## Prediction Example
 
-<img width="1313" height="350" alt="model" src="https://github.com/user-attachments/assets/b690f8af-11fd-414e-bdb9-9c099a9f31b8" />
+<img width="786" height="510" alt="image" src="https://github.com/user-attachments/assets/97b39c27-6a22-4881-8ba3-8070883d3569" />
+
 
 ---
 
