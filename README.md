@@ -180,7 +180,9 @@ project/
 ├── README.md
 └── images/
 ```
+## Note
 
+The trained model weights are not included in this repository because the fine-tuned TrOCR model exceeds GitHub's file size limit. The application was developed and tested locally using the trained model.
 ---
 
 # Author
