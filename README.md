@@ -5,7 +5,7 @@
 
 This project is an Optical Character Recognition (OCR) system developed for extracting printed Urdu text from images using Microsoft's TrOCR (Transformer-based OCR) model. The model was fine-tuned on a custom Urdu image dataset during the Code Saviours ML/AI Internship (Batch SI-26).
 
-The project is deployed as a live web application using **Gradio** and **Hugging Face Spaces**, allowing users to upload Urdu text images and receive extracted text through a simple interface.
+The project is deployed as a live web application using **streamlit** and **Hugging Face Spaces**, allowing users to upload Urdu text images and receive extracted text through a simple interface.
 
 ---
 
@@ -47,7 +47,7 @@ The model was fine-tuned on a custom dataset consisting of printed Urdu text ima
 - PyTorch
 - Hugging Face Transformers
 - TrOCR
-- Gradio
+- streamlit
 - Google Colab
 - Hugging Face Spaces
 - Pillow
@@ -64,10 +64,10 @@ The model was fine-tuned on a custom dataset consisting of printed Urdu text ima
 
 # How to Run Locally
 
-Clone the repository
+### 1. Clone the repository
 
 ```bash
-git clone(https://github.com/noorulaein/urdu-ocr-codesaviours-si26-noorulaein-fatima)
+git clone https://github.com/noorulaein/urdu-ocr-codesaviours-si26-noorulaein-fatima.git
 ```
 
 Move into the project directory
@@ -85,10 +85,10 @@ pip install -r requirements.txt
 Run the application
 
 ```bash
-python app.py
+streamlit run streamlit_app.py
 ```
 
-The Gradio application will open in your browser.
+The Streamlit application will open in your browser.
 
 ---
 
@@ -117,11 +117,24 @@ The dataset was collected and prepared using publicly available Urdu text source
 - Fine-tuned using PyTorch
 - Deployment: Hugging Face Spaces
 
-### Accuracy
+### Results
 
-Current Model Accuracy:
+The model was fine-tuned using a custom Urdu OCR dataset and evaluated after training.
 
-**Approximately 2%**
+The final evaluation produced an evaluation loss of approximately **0.0652**.
+
+The model still has limitations in recognizing Urdu Nastaliq text consistently, particularly with different fonts, layouts, and image quality.
+The Urdu OCR application was tested using multiple printed Urdu text images with different levels of image quality and text complexity.
+
+### Test Cases
+
+| Test Case | Input | Result |
+|---|---|---|
+| 1 | Clear Urdu text | Unsuccessful |
+| 2 | Long Urdu paragraph | Unsuccessful |
+| 3 | Low-quality image | Unsuccessful |
+| 4 | Mixed Urdu and English | Unsuccessful |
+| 5 | Different printed Urdu text | Unsuccessful |
 
 ### Current Limitations
 
@@ -167,6 +180,12 @@ These improvements are expected to substantially increase OCR accuracy and make 
 
 ---
 
+## 🎥 Project Demo
+
+Watch the complete project demonstration on Loom:
+
+ [Watch the Urdu OCR Project Demo]](https://www.loom.com/share/99ade180420b49859a76855b9ce050a1)
+ 
 # Project Structure
 
 ```
